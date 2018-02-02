@@ -5,7 +5,7 @@
 @section('content')
 <div class="panel panel-default">
 	<div class="panel-heading">
-		Última Versión 0.3: Cambios introducidos
+		Última Versión 0.3.1: Cambios introducidos
 	</div>
 	<div class="panel-body">
 		<p>
