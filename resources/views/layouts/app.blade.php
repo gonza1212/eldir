@@ -13,6 +13,7 @@
     <title>@yield('title', config('app.name', 'Laravel'))</title>
 
     <!-- Styles -->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fa-svg-with-js.css') }}" rel="stylesheet">
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
@@ -50,10 +51,10 @@
                             @if(Auth::user() && Auth::user()->admin())
                                 <li><a href="{!! route('users.index') !!}"><i class="fas fa-users"></i> Usuarios</a></li>
                             @endif
-                            <li><a href="{{ route('actividad.create') }}"><i class="fas fa-book"></i> Actividad</a></li>
-                            <li><a href="{{ route('revisita.create') }}"><i class="fas fa-address-book"></i> Revisitas</a></li>
+                            <li><a href="{{ route('actividad.index') }}"><i class="fas fa-book"></i> Actividad</a></li>
+                            <li><a href="{{ route('revisita.index') }}"><i class="fas fa-address-book"></i> Revisitas</a></li>
                             <li><a href="{{ route('informe') }}"><i class="fas fa-newspaper"></i> Informe</a></li>
-                            <li><a href="{{ route('ayuda.main') }}"><i class="fas fa-question-circle"></i> Ayuda</a></li>
+                            <li><a href="{{ route('notas.index') }}"><i class="fas fa-sticky-note"></i> Notas</a></li>
                         @endguest
                     </ul>
 
@@ -83,16 +84,26 @@
                                 </ul>
                             </li>
                         @endguest
-                        <li><a href="{{ route('ayuda.version') }}"><i class="fas fa-info-circle"></i> v0.3</a></li>
+                        <li><a href="{{ route('ayuda.main') }}"><i class="fas fa-question-circle"></i></a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div class="container">
+<div class="container">
     <div class="row">
         <div class="col-md-12">
         @include('flash::message')
         @yield('content')
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+        <footer>
+            <p class="text-center"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type"><a href="{{ route('ayuda.version') }}" class="aVersion">Eldir v0.4 - Anotador de Actividad</a></span> por <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Millapinda Gonzalo</span> se distribuye bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p>
+        </footer>
         </div>
     </div>
 </div>
@@ -103,10 +114,10 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/fontawesome-all.min.js') }}"></script>
     <script>
-        function preguntar(id){
+        function eliminar(id, tabla) {
        eliminar=confirm("¿Deseas eliminar este registro?");
        if (eliminar)
-       window.location.href="actividad/"+id+"/destroy";//página web a la que te redirecciona si confirmas la eliminación
+       window.location.href= tabla+"/"+id+"/destroy";//página web a la que te redirecciona si confirmas la eliminación
         else
         alert('No se ha podido eliminar el registro..')
         }

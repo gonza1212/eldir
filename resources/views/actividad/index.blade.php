@@ -8,7 +8,7 @@
 	<a href="{{ route('actividad.create') }}" class="btn btn-primary">Cargar Actividad</a>
 	<br>
 	<hr>
-	<div class="table-responsive">
+	<div class="table-responsive rgba">
 		<table class="table">
 		  <thead>
 		    <tr>
@@ -32,7 +32,7 @@
 		      <td>{{ $a->acompanante }}</td>
 		      <td>{{ $a->publicaciones }}</td>
 		      <td>{{ $a->videos }}</td>
-		      <td><a href="javascript:preguntar({{ $a->id }})" class="btn btn-danger btn-sm">Borrar</a></td>
+		      <td><a href="javascript:eliminar({{ $a->id }}, 'actividad')" class="btn btn-danger"><i class="fas fa-trash"></i></a></td>
 		    </tr>
 		    @endforeach
 		  </tbody>

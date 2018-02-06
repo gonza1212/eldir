@@ -36,6 +36,12 @@ Route::prefix('ayuda')->group(function () {
 	})->name('ayuda.version');
 });
 
+Route::resource('notas', 'NotasController')->middleware('auth');
+   Route::get('notas/{id}/destroy', [
+      'uses' => 'NotasController@destroy',
+      'as' => 'notas.destroy'
+    ])->middleware('auth');
+
 Route::resource('revisita', 'RevisitaController')->middleware('auth');
 
 Route::prefix('admin')->group(function () {

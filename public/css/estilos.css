@@ -4,10 +4,80 @@ si es una clase se escribe un punto y luego el nombre de la clase (ej. .jumbotro
 
 /* Estilos de Verano */
 body {
-    background-image: url('../images/geometry.png');
+    background-image: url('../images/wood_pattern.png');
 }
 
+/* Azules: #0b88a8 #19a3c6 */
+/* Verdes: #147a4d #afc464 */
+
 #navbar {
+	background-color: #0b88a8 !important;
+}
+
+li > a:link, li > a:visited, .navbar-brand:visited, .navbar-brand:link, .disabled{
+	font-size:large;
+	color: #e5e5e5 !important;
+}
+
+li > a:hover, li > a:active, .navbar-brand:hover, .navbar-brand:active {
+	color: black !important;
+}
+
+.panel-heading {
+    background-color: #19a3c6 !important;
+    color: white !important;
+}
+
+.btn-primary, .active {
+	background-color: #0b88a8 !important;
+	border-color: #0b88a8 !important;
+	color: white;
+	font-size:large;
+}
+
+.open > a, .dropdown-menu {
+    background-color: #36626a !important;
+}
+
+footer {
+	color: #707070;
+}
+
+.rgba {
+   background-color:rgba(255,255,255,0.6);
+}
+
+.aVersion {
+	font:bold 14px "arial";
+}
+
+.contenidoNota {
+	background-color: white !important;
+    padding: 1em;
+    font:normal 2em "arial";
+}
+
+#collapseComoVoy {
+	font-size: 1.5em;
+}
+
+.btn-comoVoy {
+	border-radius: 35px;
+}
+
+.btn-home {
+	padding-top: 1em;
+	width:6em;
+  	height:6em;
+	border-radius: 6em;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.text-home {
+	font:bold 1.5em "arial";
+}
+
+/*#navbar {
 	background-color: #36626a !important;
 }
 
@@ -34,4 +104,4 @@ li > a:hover, li > a:active, .navbar-brand:hover, .navbar-brand:active {
 
 .open > a, .dropdown-menu {
     background-color: #36626a !important;
-}
+} */

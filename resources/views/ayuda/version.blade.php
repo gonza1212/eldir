@@ -5,14 +5,14 @@
 @section('content')
 <div class="panel panel-default">
 	<div class="panel-heading">
-		Última Versión 0.3.1: Cambios introducidos
+		Última Versión 0.4: Cambios introducidos
 	</div>
 	<div class="panel-body">
 		<p>
-			1 - Agregadas funciones ABMC de Usuario para Admin.<br>
-			2 - Arreglado bug que no permitía calcular el informe durante medianoche?...<br>
-			3 - Agregado icono de aplicación.<br>
-			4 - Agregadas validaciones para registrar actividad.<br>
+			1 - Cambio de tema: Azul Claro y Madera.<br>
+			2 - Agregada Licencia y Autor.<br>
+			3 - Nueva funcionalidad: Notas.<br>
+			4 - Vista Inicio renovada.<br>
 		</p>
 	</div>
 </div>
@@ -20,6 +20,7 @@
 	<div class="panel-heading">
 		Versiones anteriores
 	</div>
+	<div class="rgba">hola</div>
 	<div class="panel-body">
 		<div class="table-responsive">
 		<table class="table">
@@ -30,6 +31,17 @@
 		    </tr>
 		  </thead>
 		  <tbody>
+		  	<tr>
+		      <td>0.3</td>
+		      	<td>
+			      	<p>
+						1 - Agregadas funciones ABMC de Usuario para Admin.<br>
+						2 - Arreglado bug que no permitía calcular el informe durante medianoche.<br>
+						3 - Agregado icono de aplicación.<br>
+						4 - Agregadas validaciones para registrar actividad.<br>
+					</p>
+				</td>
+		    </tr>
 		    <tr>
 		      <td>0.2</td>
 		      	<td>
