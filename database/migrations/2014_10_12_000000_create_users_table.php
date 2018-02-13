@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->enum('type', ['member', 'admin'])->default('member');
             $table->string('profile')->nullable(); //url de la imagen de perfil
+            $table->tinyInteger('letra_grande')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

@@ -32,7 +32,7 @@
             <p class="text-home">Cargar Revisita</p>
         </div>
         <div class="col-md-3 text-center">
-            <a class="btn btn-primary btn-home" href="{!! route('informe') !!}"><i class="fas fa-newspaper fa-4x"></i></a>
+            <a class="btn btn-primary btn-home" href="{!! route('informe') !!}"><i class="fas fa-list-alt fa-4x"></i></a>
             <br>
             <br>
             <p class="text-home">Ver Informe</p>

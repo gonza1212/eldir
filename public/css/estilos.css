@@ -44,7 +44,7 @@ footer {
 }
 
 .rgba {
-   background-color:rgba(255,255,255,0.6);
+   background-color:rgba(255,255,255,0.4);
 }
 
 .aVersion {
@@ -76,6 +76,8 @@ footer {
 .text-home {
 	font:bold 1.5em "arial";
 }
+
+
 
 /*#navbar {
 	background-color: #36626a !important;

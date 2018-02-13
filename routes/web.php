@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('ajustar-letra', 'ConfigController@ajustarLetra')->middleware('auth')->name('ajustar-letra');
+
 Route::resource('actividad', 'ActividadController')->middleware('auth');
    Route::get('actividad/{id}/destroy', [
    		'uses' => 'ActividadController@destroy',

@@ -5,14 +5,13 @@
 @section('content')
 <div class="panel panel-default">
 	<div class="panel-heading">
-		Última Versión 0.4: Cambios introducidos
+		Última Versión 0.4.5: Cambios introducidos
 	</div>
 	<div class="panel-body">
 		<p>
-			1 - Cambio de tema: Azul Claro y Madera.<br>
-			2 - Agregada Licencia y Autor.<br>
-			3 - Nueva funcionalidad: Notas.<br>
-			4 - Vista Inicio renovada.<br>
+			1 - Agregada opción para aumentar tamaño de letra.<br>
+			1 - Cambio de ícono para informe.<br>
+			2 - Arreglos menores.<br>
 		</p>
 	</div>
 </div>
@@ -20,7 +19,6 @@
 	<div class="panel-heading">
 		Versiones anteriores
 	</div>
-	<div class="rgba">hola</div>
 	<div class="panel-body">
 		<div class="table-responsive">
 		<table class="table">
@@ -31,6 +29,17 @@
 		    </tr>
 		  </thead>
 		  <tbody>
+		  	<tr>
+		      <td>0.4</td>
+		      	<td>
+			      	<p>
+						1 - Cambio de tema: Azul Claro y Madera.<br>
+						2 - Agregada Licencia y Autor.<br>
+						3 - Nueva funcionalidad: Notas.<br>
+						4 - Vista Inicio renovada.<br>
+					</p>
+				</td>
+		    </tr>
 		  	<tr>
 		      <td>0.3</td>
 		      	<td>

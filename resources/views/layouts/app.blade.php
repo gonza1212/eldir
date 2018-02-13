@@ -17,6 +17,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fa-svg-with-js.css') }}" rel="stylesheet">
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
+    @if(Auth::user() && Auth::user()->letra_grande)
+    <style type="text/css">
+    .size-letra {
+        font-size: x-large;
+    }
+    input {
+        height: 2em !important;
+    }
+    </style>
+    @endif
 </head>
 <body>
     <div id="app">
@@ -53,7 +63,7 @@
                             @endif
                             <li><a href="{{ route('actividad.index') }}"><i class="fas fa-book"></i> Actividad</a></li>
                             <li><a href="{{ route('revisita.index') }}"><i class="fas fa-address-book"></i> Revisitas</a></li>
-                            <li><a href="{{ route('informe') }}"><i class="fas fa-newspaper"></i> Informe</a></li>
+                            <li><a href="{{ route('informe') }}"><i class="fas fa-list-alt"></i> Informe</a></li>
                             <li><a href="{{ route('notas.index') }}"><i class="fas fa-sticky-note"></i> Notas</a></li>
                         @endguest
                     </ul>
@@ -65,11 +75,17 @@
                             <li></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true"><i class="fas fa-user-circle"></i> 
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true"><i class="fas fa-cogs"></i> <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                    <li>
+                                        @if(Auth::user()->letra_grande)
+                                        <a href="{{ route('ajustar-letra') }}"><i class="fas fa-font"></i> Letra Normal</a>
+                                        @else
+                                        <a href="{{ route('ajustar-letra') }}"><i class="fas fa-font fa-2x"></i> Letra Grande</a>
+                                        @endif
+                                    </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -89,7 +105,7 @@
                 </div>
             </div>
         </nav>
-<div class="container">
+<div class="container size-letra">
     <div class="row">
         <div class="col-md-12">
         @include('flash::message')
@@ -102,12 +118,12 @@
     <div class="row">
         <div class="col-md-12">
         <footer>
-            <p class="text-center"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type"><a href="{{ route('ayuda.version') }}" class="aVersion">Eldir v0.4 - Anotador de Actividad</a></span> por <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Millapinda Gonzalo</span> se distribuye bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p>
+            <p class="text-center"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type"><a href="{{ route('ayuda.version') }}" class="aVersion">Eldir v0.4.5 - Anotador de Actividad</a></span> por <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Millapinda Gonzalo</span> se distribuye bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p>
         </footer>
         </div>
     </div>
 </div>
-
+<br>
     </div>
 
     <!-- Scripts -->
