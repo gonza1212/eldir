@@ -39,11 +39,13 @@ class InformeController extends Controller
 		$minutos = 0;
 		$publicaciones = 0;
 		$videos = 0;
+		$revisitas = 0;
 		foreach ($actividades as $a) {
 			$horas += $a->horas;
 			$minutos += $a->minutos;
 			$publicaciones += $a->publicaciones;
 			$videos += $a->videos;
+			$revisitas += $a->revisitas;
 		}
 		$horas += intdiv($minutos, 60);
 		$minutos = $minutos%60;
@@ -51,6 +53,7 @@ class InformeController extends Controller
 		$actividad[] = $minutos;
 		$actividad[] = $publicaciones;
 		$actividad[] = $videos;
+		$actividad[] = $revisitas;
 		return $actividad;
     }
 }

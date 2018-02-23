@@ -8,10 +8,10 @@
 <div class="container size-letra">
     <div class="row">
         <div class="col-md-12">
-			{!! Form::open(['route' => 'actividad.store', 'files' => true]) !!}
+			{!! Form::model( $actividad, ['route' => ['actividad.update', $actividad->id], 'method' => 'PUT']) !!}
 				<div class="form-group">
 					{!! Form::label('fecha', 'Fecha') !!}
-					{!! Form::date('fecha', \Carbon\Carbon::now(), ['class' => 'form-control size-letra', 'required']) !!}
+					{!! Form::date('fecha', \Carbon\Carbon::parse($actividad->fecha), ['class' => 'form-control size-letra', 'required']) !!}
 				</div>
 				{!! Form::label(null, 'Tiempo predicado (horas:minutos)') !!}
 				<div class="form-group input-group">

@@ -19,7 +19,7 @@ class NotasController extends Controller
     }
 
     public function store(Request $request) {
-        $this->validate($request, ['titulo' => 'nullable|min:8|max:255', 'contenido' => 'min:3|max:5000|required']);      
+        $this->validate($request, ['titulo' => 'nullable|min:3|max:255', 'contenido' => 'min:3|max:5000|required']);      
         $nota = new Nota($request->all());
         $nota->titulo = isset($request->titulo) ? $request->titulo : 'Nota del ' . Carbon::now();
         $nota->user_id = \Auth::user()->id;

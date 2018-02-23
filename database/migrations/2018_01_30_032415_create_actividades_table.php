@@ -17,11 +17,12 @@ class CreateActividadesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->timestamp('fecha');
-            $table->integer('horas');
-            $table->integer('minutos');
-            $table->string('acompanante');
-            $table->integer('publicaciones');
-            $table->integer('videos');
+            $table->smallInteger('horas')->default(0);
+            $table->smallInteger('minutos')->default(0);
+            $table->string('acompanante')->default('...');
+            $table->smallInteger('publicaciones')->default(0);
+            $table->smallInteger('videos')->default(0);
+            $table->smallInteger('revisitas')->default(0);
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
