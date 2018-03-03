@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Laracasts\Flash\Flash;
 
+/* Este controlador es para el usuario admin y permite realizar las operaciones ABMC sobre la clase User */
 class UserController extends Controller
 {
 

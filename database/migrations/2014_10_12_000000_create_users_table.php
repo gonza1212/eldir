@@ -21,6 +21,9 @@ class CreateUsersTable extends Migration
             $table->enum('type', ['member', 'admin'])->default('member');
             $table->string('profile')->nullable(); //url de la imagen de perfil
             $table->tinyInteger('letra_grande')->default(0);
+            $table->enum('condicion', ['Publicador', 'Precursor Auxiliar', 'Precursor Regular'])->default('Publicador');
+            $table->tinyInteger('meta')->unsigned()->default(0);
+            $table->tinyInteger('meta_activa')->default(0); // Por defecto, la meta de horas esta desactivada
             $table->rememberToken();
             $table->timestamps();
         });

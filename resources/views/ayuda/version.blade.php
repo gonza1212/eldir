@@ -8,15 +8,14 @@
         <div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					Última Versión 0.5: Cambios introducidos
+					Última Versión {{ Config::get('constants.NUM_VERSION') }}: Cambios introducidos
 				</div>
 				<div class="panel-body">
 					<p>
-						1 - Se puede cargar actividad por minutos, sin tener que escribir nada en campo Horas.<br>
-						2 - Se puede cargar una Nota con título de 3 caracteres en adelante.<br>
-						3 - Agregada opción para cargar revisitas como parámetro de actividad.<br>
-						4 - Agregada opción para editar un registro de actividad cargado.<br>
-						5 - Arreglos menores y validaciones extra.<br>
+						1 - <strong>Nueva función: Configuración de Meta mensual en horas.</strong><br>
+						2 - Agregada sección de Ayuda: Opciones para Metas.<br>
+						3 - <strong>Nueva opción: Actividad informada</strong> (<a href="{{ route('ayuda.main') }}#actividad-informada">explicación</a>).<br>
+						4 - Arreglos menores.
 					</p>
 				</div>
 			</div>
@@ -35,6 +34,18 @@
 					  </thead>
 					  <tbody>
 					  	<tr>
+					      <td>0.5</td>
+					      	<td>
+						      	<p>
+									1 - Se puede cargar actividad por minutos, sin tener que escribir nada en campo Horas.<br>
+									2 - Se puede cargar una Nota con título de 3 caracteres en adelante.<br>
+									3 - Agregada opción para cargar revisitas como parámetro de actividad.<br>
+									4 - Agregada opción para editar un registro de actividad cargado.<br>
+									5 - Arreglos menores y validaciones extra.<br>
+								</p>
+							</td>
+					    </tr>
+					  	<tr>
 					      <td>0.4.5</td>
 					      	<td>
 						      	<p>
@@ -50,7 +61,7 @@
 						      	<p>
 									1 - Cambio de tema: Azul Claro y Madera.<br>
 									2 - Agregada Licencia y Autor.<br>
-									3 - Nueva funcionalidad: Notas.<br>
+									3 - <strong>Nueva funcionalidad: Notas.</strong><br>
 									4 - Vista Inicio renovada.<br>
 								</p>
 							</td>
@@ -59,7 +70,7 @@
 					      <td>0.3</td>
 					      	<td>
 						      	<p>
-									1 - Agregadas funciones ABMC de Usuario para Admin.<br>
+									1 - <strong>Agregadas funciones ABMC de Usuario para Admin.</strong><br>
 									2 - Arreglado bug que no permitía calcular el informe durante medianoche.<br>
 									3 - Agregado icono de aplicación.<br>
 									4 - Agregadas validaciones para registrar actividad.<br>

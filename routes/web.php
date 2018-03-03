@@ -19,8 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('ajustar-letra', 'ConfigController@ajustarLetra')->middleware('auth')->name('ajustar-letra');
-
 Route::resource('actividad', 'ActividadController')->middleware('auth');
    Route::get('actividad/{id}/destroy', [
    		'uses' => 'ActividadController@destroy',
@@ -28,6 +26,7 @@ Route::resource('actividad', 'ActividadController')->middleware('auth');
    	])->middleware('auth');
 
 Route::get('/informe', 'InformeController@index')->name('informe')->middleware('auth');
+Route::post('/pasar-actividad', 'InformeController@pasarSobrante')->name('pasar-actividad')->middleware('auth');
 
 Route::prefix('ayuda')->group(function () {
    Route::get('/main', function () {
@@ -52,4 +51,11 @@ Route::resource('users', 'UserController')->middleware('admin');
       'uses' => 'UserController@destroy',
       'as' => 'users.destroy'
     ])->middleware('auth');
+});
+
+Route::prefix('opciones')->group(function() {
+  Route::get('ajustar-letra', 'ConfigController@ajustarLetra')->middleware('auth')->name('ajustar-letra');
+  Route::get('meta', 'ConfigController@meta')->middleware('auth')->name('meta');
+  Route::get('ajustar-meta', 'ConfigController@ajustarMeta')->middleware('auth')->name('ajustar-meta');
+  Route::post('configurar-meta', 'ConfigController@configurarMeta')->middleware('auth')->name('configurar-meta');
 });

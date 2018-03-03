@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'type',
+        'name', 'email', 'password', 'type', 'profile', 'letra_grande', 'condicion', 'meta', 'periodo_meta', 'meta_activa'
     ];
 
     /**
@@ -37,5 +37,9 @@ class User extends Authenticatable
 
     public function admin() {
         return $this->type == 'admin';
+    }
+
+    public function meta_activa() {
+        return $this->meta_activa == 1;
     }
 }

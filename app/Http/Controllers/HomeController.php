@@ -35,6 +35,12 @@ class HomeController extends Controller
             }
         }
         $actividadActual = (new InformeController())->calcularActividad($actuales);
-        return view('home')->with('actividadActual', $actividadActual)->with('veces', count($actuales));
+        $veces = 0;
+        foreach ($actuales as $a) {
+            if($a->acompanante != 'Sobrante del mes pasado' && $a->acompanante != 'Deuda del mes pasado') {
+                $veces++;
+            }
+        }
+        return view('home', compact('actividadActual', 'veces'));
     }
 }

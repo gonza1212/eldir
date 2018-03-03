@@ -75,10 +75,14 @@
                             <li></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true"><i class="fas fa-cogs"></i> <span class="caret"></span>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true"><i class="fas fa-cogs"></i> Opciones <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="{{ route('meta') }}"><i class="fas fa-flag-checkered"></i> Meta</a>
+                                    </li>
+                                    <li><hr></li>
                                     <li>
                                         @if(Auth::user()->letra_grande)
                                         <a href="{{ route('ajustar-letra') }}"><i class="fas fa-font"></i> Letra Normal</a>
@@ -86,6 +90,7 @@
                                         <a href="{{ route('ajustar-letra') }}"><i class="fas fa-font fa-2x"></i> Letra Grande</a>
                                         @endif
                                     </li>
+                                    <li><hr></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -118,7 +123,7 @@
     <div class="row">
         <div class="col-md-12">
         <footer>
-            <p class="text-center"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type"><a href="{{ route('ayuda.version') }}" class="aVersion">Eldir v0.5 - Anotador de Actividad</a></span> por <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Millapinda Gonzalo</span> se distribuye bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p>
+            <p class="text-center"><a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type"><a href="{{ route('ayuda.version') }}" class="aVersion">Eldir v{{ Config::get('constants.NUM_VERSION') }} Anotador de Actividad</a></span> está hecho con <i class="fas fa-heart"></i> por <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Millapinda Gonzalo</span> y se distribuye bajo una <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p>
         </footer>
         </div>
     </div>
@@ -127,7 +132,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.slim.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/fontawesome-all.min.js') }}"></script>
@@ -139,6 +144,19 @@
         else
         alert('No se ha podido eliminar el registro..')
         }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function()
+            {
+            $("#selectorCondicion").click(function () {
+                console.log($("#selectorCondicion").val())
+            //saco el valor accediendo a un input de tipo text y name = nombre2 y lo asigno a uno con name = nombre3 
+            if($("#selectorCondicion").val() == "Precursor Auxiliar")
+                $("#meta").val(50)
+            if($("#selectorCondicion").val() == "Precursor Regular")
+                $("#meta").val(70)
+            });     
+        });
     </script>
 </body>
 </html>

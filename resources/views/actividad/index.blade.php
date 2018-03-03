@@ -27,7 +27,7 @@
 				  	@foreach($actividades as $a)
 				    <tr>
 				      <td>{!! Carbon\Carbon::parse($a->fecha)->toFormattedDateString() !!}</td>
-				      @if($a->minutos > 9)
+				      @if($a->minutos > 9 || $a->minutos < 0)
 				      <td>{{ $a->horas }}:{{ $a->minutos }}</td>
 				      @else
 				      <td>{{ $a->horas }}:0{{ $a->minutos }}</td>
