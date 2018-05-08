@@ -32,7 +32,7 @@
 				</div>
 				<div class="form-group">
 					{!! Form::label('revisitas', 'Revisitas') !!}
-					{!! Form::text('revisitas', null, ['class' => 'form-control size-letra', 'placeholder' => 'Cantidad (opcional)']) !!}
+					{!! Form::number('revisitas', null, ['class' => 'form-control size-letra', 'placeholder' => 'Cantidad (opcional)']) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::submit('Guardar', ['class' => 'btn btn-primary size-letra']) !!}

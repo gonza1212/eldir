@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/no-mostrar', 'HomeController@mejorasVistas')->middleware('auth')->name('no-mostrar');
 
 Route::resource('actividad', 'ActividadController')->middleware('auth');
    Route::get('actividad/{id}/destroy', [
@@ -43,7 +44,37 @@ Route::resource('notas', 'NotasController')->middleware('auth');
       'as' => 'notas.destroy'
     ])->middleware('auth');
 
+Route::resource('persona', 'PersonaController')->middleware('auth');
+Route::get('persona/{id}/destroy', [
+      'uses' => 'PersonaController@destroy',
+      'as' => 'persona.destroy'
+    ])->middleware('auth');
+
+Route::resource('visita', 'VisitaController')->middleware('auth');
+Route::get('visita/{id}/destroy', [
+      'uses' => 'VisitaController@destroy',
+      'as' => 'visita.destroy'
+    ])->middleware('auth');
+
 Route::resource('revisita', 'RevisitaController')->middleware('auth');
+  Route::get('revisita/create/{id}', [
+      'uses' => 'RevisitaController@create',
+      'as' => 'revisita.create'
+    ])->middleware('auth');
+
+  Route::resource('estudio', 'EstudioController')->middleware('auth');
+  Route::get('estudio/create/{id}', [
+      'uses' => 'EstudioController@create',
+      'as' => 'estudio.create'
+    ])->middleware('auth');
+  Route::get('estudio/convertir/{id}', [
+      'uses' => 'EstudioController@convertir',
+      'as' => 'estudio.convertir'
+    ])->middleware('auth');
+  Route::get('estudio/cancelar/{id}', [
+      'uses' => 'EstudioController@cancelar',
+      'as' => 'estudio.cancelar'
+    ])->middleware('auth');
 
 Route::prefix('admin')->group(function () {
 Route::resource('users', 'UserController')->middleware('admin');

@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->enum('condicion', ['Publicador', 'Precursor Auxiliar', 'Precursor Regular'])->default('Publicador');
             $table->tinyInteger('meta')->unsigned()->default(0);
             $table->tinyInteger('meta_activa')->default(0); // Por defecto, la meta de horas esta desactivada
+            $table->tinyInteger('mejoras_vistas')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

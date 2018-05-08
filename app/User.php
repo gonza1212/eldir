@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'type', 'profile', 'letra_grande', 'condicion', 'meta', 'periodo_meta', 'meta_activa'
+        'name', 'email', 'password', 'type', 'profile', 'letra_grande', 'condicion', 'meta', 'periodo_meta', 'meta_activa', 'mejoras_vistas'
     ];
 
     /**
@@ -35,11 +35,19 @@ class User extends Authenticatable
         return $this->hasMany('App\Nota');
     }
 
+    public function visitas () {
+        return $this->hasMany('App\Visita');
+    }
+
     public function admin() {
         return $this->type == 'admin';
     }
 
     public function meta_activa() {
         return $this->meta_activa == 1;
+    }
+
+    public function mejorasNoVistas() {
+        return $this->mejoras_vistas == 0;
     }
 }

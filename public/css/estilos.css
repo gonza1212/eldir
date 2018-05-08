@@ -23,9 +23,8 @@ li > a:hover, li > a:active, .navbar-brand:hover, .navbar-brand:active {
 	color: black !important;
 }
 
-.panel-heading {
-    background-color: #19a3c6 !important;
-    color: white !important;
+.btn {
+	margin: 2px;
 }
 
 .btn-primary, .active {
@@ -42,8 +41,33 @@ li > a:hover, li > a:active, .navbar-brand:hover, .navbar-brand:active {
 	font-size:large;
 }
 
-.open > a, .dropdown-menu {
-    background-color: #36626a !important;
+.btn-danger {
+	background-color: #ff0000 !important;
+	border-color: #ff0000 !important;	
+}
+
+.btn-comoVoy {
+	border-radius: 35px;
+	margin: 2px;
+}
+
+.btn-home {
+	padding-top: 0.75em;
+	width:4.5em;
+  	height:4.5em;
+	border-radius: 4em;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.btn-sm {
+	padding: 0px 1em 0px 1em;
+	font-size: 1em;
+}
+
+.btn-show-revisita {
+	background-color: #0b88a8 !important;
+	border-color: #0b88a8 !important;
+	color: white;
 }
 
 footer {
@@ -52,6 +76,12 @@ footer {
 
 .rgba {
    background-color:rgba(255,255,255,0.4);
+   padding: 1em;
+}
+
+.bg-celeste-eldir {
+	background-color: #0b88a8;
+	margin-bottom: 1em;
 }
 
 .aVersion {
@@ -64,20 +94,8 @@ footer {
     font:normal 2em "arial";
 }
 
-#collapseComoVoy {
+#collapseHome {
 	font-size: 1.5em;
-}
-
-.btn-comoVoy {
-	border-radius: 35px;
-}
-
-.btn-home {
-	padding-top: 1em;
-	width:6em;
-  	height:6em;
-	border-radius: 6em;
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .text-home {
@@ -99,31 +117,43 @@ footer {
 	font:bold 1.5em "arial";
 }
 
-/*#navbar {
-	background-color: #36626a !important;
+.link-persona-index {
+	color: white;
+	text-decoration: none !important;
 }
 
-li > a:link, li > a:visited, .navbar-brand:visited, .navbar-brand:link, .disabled{
-	font-size:large;
-	color: #f4f4f4 !important;
+.link-persona-index:hover {
+	color: black;
 }
 
-li > a:hover, li > a:active, .navbar-brand:hover, .navbar-brand:active {
-	color: #73b1c1 !important;
+.panel-default {
+	border-radius: 4px;
+	background-color: #fffdf4;
 }
 
 .panel-heading {
-    background-color: #588d9c !important;
+	border-radius: 4px 4px 0px 0px;
+	padding: 1em;
+    background-color: #19a3c6 !important;
     color: white !important;
 }
 
-.btn-primary, .active {
-	background-color: #73b1c1 !important;
-	border-color: #73b1c1 !important;
-	color: white;
-	font-size:large;
+.panel-body {
+	padding: 1em;
 }
 
-.open > a, .dropdown-menu {
-    background-color: #36626a !important;
-} */
+.panel-collapse {
+	padding-top: 1em;
+}
+
+.a-home-mejoras {
+	color: #307af2;
+}
+
+.a-home-mejoras:hover {
+	color: black;
+}
+
+.li-indice {
+	color: black !important;
+}

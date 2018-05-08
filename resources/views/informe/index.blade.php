@@ -6,12 +6,12 @@
 <div class="container size-letra">
     <div class="row">
         <div class="col-md-12">
-			<div class="panel panel-default">
-				<div class="panel-heanding">
+			<div class="panel panel-default" style="border-radius: 0px;">
+				<div class="panel-heading">
 					<h3 class="text-center">{!! $meses[$mesActual->month] . ' de ' . $mesActual->year !!}</h3>
 				</div>
 				<div class="panel-body text-center">
-					<h3>{{ $actividadActual[0] }}<small> horas con </small>{{ $actividadActual[1] }}<small> minutos, </small>{{ $actividadActual[2] }}<small> publicaciones, </small>{{ $actividadActual[3] }}<small> videos y </small>{{ $actividadActual[4] }}<small> revisitas.</small></h3>
+					<h3>{{ $actividadActual[0] }}<small> horas con </small>{{ $actividadActual[1] }}<small> minutos, </small>{{ $actividadActual[2] }}<small> publicaciones, </small>{{ $actividadActual[3] }}<small> videos, </small>{{ $actividadActual[4] }}<small> revisitas y </small>{{ $actividadActual[5] }}<small> estudios.</small></h3>
 					<hr>
                         @if(\Auth::user()->meta_activa())
                             <h4 class="size-letra">Mi meta para este mes era de <strong>{{ \Auth::user()->meta }} hrs.</strong></h4>
@@ -20,7 +20,12 @@
                             $min_dia = (\Auth::user()->meta * 60) / $fecha->daysInMonth;
                             $horas_deber = intdiv($min_dia * $fecha->day, 60);
                             $min_deber = ($min_dia * $fecha->day) % 60;
-                            if($actividadActual[0] > $horas_deber || $actividadActual[0] == $horas_deber && $actividadActual[1] >= $min_deber) {
+                            if($actividadActual[0] >= \Auth::user()->meta) {
+                                @endphp
+                                <h3 class="text-success font-weight-bold"><i class="far fa-smile fa-lg fa-spin"></i> ¡¡¡Cumplí mi meta!!! <i class="far fa-smile fa-lg fa-spin" data-fa-transform="rotate-90"></i></h3>
+                                @php
+                            }
+                            else if($actividadActual[0] > $horas_deber || $actividadActual[0] == $horas_deber && $actividadActual[1] >= $min_deber) {
                                 @endphp
                                 <h3 class="text-success font-weight-bold"><i class="far fa-thumbs-up"></i> ¡Voy en camino a cumplir la meta! <i class="fas fa-child"></i></h3>
                                 @php
@@ -66,11 +71,11 @@
 				</div>
 			</div>
 			<div class="panel panel-default">
-				<div class="panel-heanding">
+				<div class="panel-heading" style="border-radius: 0px;">
 					<h3 class="text-center">{!! $meses[($mesActual->subMonth())->month] . ' de ' . $mesActual->year !!}</h3>
 				</div>
 				<div class="panel-body text-center">
-					<h3>{{ $actividadPasada[0] }}<small> horas con </small>{{ $actividadPasada[1] }}<small> minutos, </small>{{ $actividadPasada[2] }}<small> publicaciones, </small>{{ $actividadPasada[3] }}<small> videos y </small>{{ $actividadPasada[4] }}<small> revisitas.</small></h3>
+					<h3>{{ $actividadPasada[0] }}<small> horas con </small>{{ $actividadPasada[1] }}<small> minutos, </small>{{ $actividadPasada[2] }}<small> publicaciones, </small>{{ $actividadPasada[3] }}<small> videos, </small>{{ $actividadPasada[4] }}<small> revisitas y </small>{{ $actividadPasada[5] }}<small> estudios.</small></h3>
 					<hr>
 					<a class="btn btn-primary" id='collapseMesPasado' data-toggle="collapse" href="#registrosPasados"><i class="fas fa-search"></i>{{ ' Ver registros de ' . $meses[$mesActual->month] .' (' . count($pasadas). ')' }}</a> <a class="btn btn-info"  id='collapseInformado' data-toggle="collapse" href="#informado"><i class="fas fa-pencil-alt"></i> Informado...</a>
 			        <div id="registrosPasados" class="panel-collapse collapse">
@@ -116,7 +121,7 @@
 									{!! Form::number('informado', null, ['class' => 'form-control size-letra', 'placeholder' => 'Cantidad de Horas', 'required', 'id' => 'informado']) !!}
 									{!! Form::hidden('predicado_horas', $actividadPasada[0], ['class' => 'form-control']) !!}
 									{!! Form::hidden('predicado_min', $actividadPasada[1], ['class' => 'form-control']) !!}
-									{!! Form::hidden('informe_redactado', $actividadPasada[0].' horas con '.$actividadPasada[1].' minutos, '.$actividadPasada[2].' publicaciones, '.$actividadPasada[3].' videos y '.$actividadPasada[4].' revisitas.', ['class' => 'form-control']) !!}
+									{!! Form::hidden('informe_redactado', $actividadPasada[0].' horas con '.$actividadPasada[1].' minutos, '.$actividadPasada[2].' publicaciones, '.$actividadPasada[3].' videos,  '.$actividadPasada[4].' revisitas y '.$actividadPasada[5].' estudios.', ['class' => 'form-control']) !!}
 								</div>
 								<div class="form-group">
 									{!! Form::submit('Guardar', ['class' => 'btn btn-primary size-letra']) !!}

@@ -5,7 +5,7 @@
 @include('layouts.errores')
 
 @section('content')
-<div class="container size-letra">
+<div class="container rgba size-letra">
     <div class="row">
         <div class="col-md-12">
 			{!! Form::open(['route' => 'actividad.store', 'files' => true]) !!}
@@ -14,25 +14,24 @@
 					{!! Form::date('fecha', \Carbon\Carbon::now(), ['class' => 'form-control size-letra', 'required']) !!}
 				</div>
 				{!! Form::label(null, 'Tiempo predicado (horas:minutos)') !!}
-				<div class="form-group input-group">
-
+				<div class="form-group input-group-prepend">
 					{!! Form::number('horas', null, ['class' => 'form-control size-letra', 'placeholder' => 'Horas']) !!}
-					<span class="input-group-addon">:</span>
-					{!! Form::number('minutos', null, ['class' => 'form-control size-letra', 'placeholder' => 'Minutos (opcional)']) !!}
+					<label class="input-group-text"> : </label>
+					{!! Form::number('minutos', null, ['class' => 'form-control size-letra', 'placeholder' => 'Minutos']) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::label('acompanante', 'Acompañante') !!}
-					{!! Form::text('acompanante', null, ['class' => 'form-control size-letra', 'placeholder' => 'Nombre (opcional)']) !!}
+					{!! Form::text('acompanante', null, ['class' => 'form-control size-letra', 'placeholder' => 'Nombre']) !!}
 				</div>
 				{!! Form::label('publicaciones', 'Publicaciones y Videos') !!}
 				<div class="form-group input-group">		
-					{!! Form::number('publicaciones', null, ['class' => 'form-control size-letra', 'placeholder' => 'Impresas y digitales (opcional)']) !!}
-				<span class="input-group-addon"></span>
-					{!! Form::number('videos', null, ['class' => 'form-control size-letra', 'placeholder' => 'Cantidad de reproducciones (opcional)']) !!}
+					{!! Form::number('publicaciones', null, ['class' => 'form-control size-letra', 'placeholder' => 'Impresas y digitales']) !!}
+				<label class="input-group-text"></label>
+					{!! Form::number('videos', null, ['class' => 'form-control size-letra', 'placeholder' => 'Cantidad de reproducciones']) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::label('revisitas', 'Revisitas') !!}
-					{!! Form::text('revisitas', null, ['class' => 'form-control size-letra', 'placeholder' => 'Cantidad (opcional)']) !!}
+					{!! Form::number('revisitas', null, ['class' => 'form-control size-letra', 'placeholder' => 'Cantidad']) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::submit('Guardar', ['class' => 'btn btn-primary size-letra']) !!}

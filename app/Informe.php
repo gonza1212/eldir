@@ -13,7 +13,7 @@ class Informe extends Model
     	return $this->belongsTo('App\User');
     }
 
-    public function scopeBuscarPorMesInformado($query, $year, $mes) {
-        return $query->where('year_informado', '=', $year)->where('mes_informado', '=', $mes);
+    public function scopeBuscarPorMesInformado($query, $user_id, $year, $mes) {
+        return $query->where('user_id', '=', $user_id)->where('year_informado', '=', $year)->where('mes_informado', '=', $mes);
     }
 }

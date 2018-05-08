@@ -8,14 +8,15 @@
         <div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					Última Versión {{ Config::get('constants.NUM_VERSION') }}: Cambios introducidos
+					Última Versión {{ Config::get('constants.NUM_VERSION') }}: Cambios y Mejoras
 				</div>
 				<div class="panel-body">
 					<p>
-						1 - <strong>Nueva función: Configuración de Meta mensual en horas.</strong><br>
-						2 - Agregada sección de Ayuda: Opciones para Metas.<br>
-						3 - <strong>Nueva opción: Actividad informada</strong> (<a href="{{ route('ayuda.main') }}#actividad-informada">explicación</a>).<br>
-						4 - Arreglos menores.
+						1 - <strong>Nueva función: Revisitas y Estudios.</strong> Se puede cargar los datos de una visita inicial, cargar revisitas nuevas o existentes, sesiones de estudio con publicacion, capítulo y párrafo, además de poder editar o eliminar cualquiera de estos datos cuando sea necesario.<br>
+						2 - <strong>Buscador de Revisitas:</strong> herramienta para buscar revisitas por múltiples campos: nombre, calle, tema hablado, textos leídos u observaciones en la persona, en la dirección o en cualquiera de las visitas realizadas.<br>
+						3 - Listado de Personas por urgencia de revisita: en un sólo toque uno puede saber cuáles son las revisitas a las hace mucho no se ve y hay que visitar.<br>
+						x - Actualización de Bootstrap y cambios de estilos.<br>
+						x - Cambios visuales menores.<br>
 					</p>
 				</div>
 			</div>
@@ -34,10 +35,21 @@
 					  </thead>
 					  <tbody>
 					  	<tr>
-					      <td>0.5</td>
+					      	<td>0.6</td>
 					      	<td>
 						      	<p>
-									1 - Se puede cargar actividad por minutos, sin tener que escribir nada en campo Horas.<br>
+									1 - <strong>Nueva función: Configuración de Meta mensual en horas.</strong><br>
+									2 - Agregada sección de Ayuda.<br>
+									3 - <strong>Nueva opción: Actividad informada</strong> (<a href="{{ route('ayuda.main') }}#actividad-informada">explicación</a>).<br>
+									4 - Arreglos menores.
+								</p>
+							</td>
+					    </tr>
+					  	<tr>
+					      	<td>0.5</td>
+					      	<td>
+						      	<p>
+									1 - Se puede cargar actividad por minutos, sin tener que escribir en campo Horas.<br>
 									2 - Se puede cargar una Nota con título de 3 caracteres en adelante.<br>
 									3 - Agregada opción para cargar revisitas como parámetro de actividad.<br>
 									4 - Agregada opción para editar un registro de actividad cargado.<br>
@@ -46,7 +58,7 @@
 							</td>
 					    </tr>
 					  	<tr>
-					      <td>0.4.5</td>
+					      	<td>0.4.5</td>
 					      	<td>
 						      	<p>
 									1 - Agregada opción para aumentar tamaño de letra.<br>
@@ -56,7 +68,7 @@
 							</td>
 					    </tr>
 					  	<tr>
-					      <td>0.4</td>
+					      	<td>0.4</td>
 					      	<td>
 						      	<p>
 									1 - Cambio de tema: Azul Claro y Madera.<br>
@@ -67,7 +79,7 @@
 							</td>
 					    </tr>
 					  	<tr>
-					      <td>0.3</td>
+					      	<td>0.3</td>
 					      	<td>
 						      	<p>
 									1 - <strong>Agregadas funciones ABMC de Usuario para Admin.</strong><br>
@@ -78,7 +90,7 @@
 							</td>
 					    </tr>
 					    <tr>
-					      <td>0.2</td>
+					      	<td>0.2</td>
 					      	<td>
 					      		<p>
 					      			1 - Arreglado bug que mezclaba registros de actividad de un mes con otro.<br>
@@ -89,8 +101,8 @@
 							</td>
 					    </tr>
 					    <tr>
-					      <td>0.1</td>
-					      <td>- Primera versión: alta del sistema.</td>
+							<td>0.1</td>
+							<td>- Primera versión: alta del sistema.</td>
 					    </tr>
 					  </tbody>
 					</table>		
