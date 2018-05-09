@@ -8,7 +8,6 @@
         <div class="col-md-12">
         	<div class="d-none d-sm-block">
         		<a href="{{ route('visita.create') }}" class="btn btn-primary"><i class="fas fa-address-book"></i> Cargar Visita Inicial</a>
-				<!--<a href="{{ route('revisita.index') }}" class="btn btn-primary"><i class="fas fa-list-ol"></i> Ver Revisitas como Lista</a>-->
         	</div>
         	<div class="d-md-none d-lg-none d-xl-none d-sm-none">
 				<a href="{{ route('visita.create') }}" class="btn btn-primary"><i class="fas fa-address-book"></i> Visita Inicial</a>

@@ -8,15 +8,16 @@
         <div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					Última Versión {{ Config::get('constants.NUM_VERSION') }}: Cambios y Mejoras
+					<h5>{{ Config::get('constants.NUM_VERSION') }} - Cambios y Mejoras</h5>
 				</div>
 				<div class="panel-body">
 					<p>
 						1 - <strong>Nueva función: Revisitas y Estudios.</strong> Se puede cargar los datos de una visita inicial, cargar revisitas nuevas o existentes, sesiones de estudio con publicacion, capítulo y párrafo, además de poder editar o eliminar cualquiera de estos datos cuando sea necesario.<br>
 						2 - <strong>Buscador de Revisitas:</strong> herramienta para buscar revisitas por múltiples campos: nombre, calle, tema hablado, textos leídos u observaciones en la persona, en la dirección o en cualquiera de las visitas realizadas.<br>
 						3 - Listado de Personas por urgencia de revisita: en un sólo toque uno puede saber cuáles son las revisitas a las hace mucho no se ve y hay que visitar.<br>
-						x - Actualización de Bootstrap y cambios de estilos.<br>
-						x - Cambios visuales menores.<br>
+						4 - Actualización de Bootstrap y cambios de estilos.<br>
+						5 - Cambios visuales menores.<br>
+						6 - Arreglos de bugs encontrados en v1.0
 					</p>
 				</div>
 			</div>

@@ -2,7 +2,7 @@
 
 return array(
 	/* Configuraciones generales */
-	'NUM_VERSION' => '1.0',
+	'NUM_VERSION' => '1.0.10 Major Version',
 	/* Arrays de datos o constantes */
 	'MESES' => [
 		'1' => 'Enero',

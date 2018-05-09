@@ -9,7 +9,7 @@
             @if(\Auth::user()->mejorasNoVistas())
             <div class="row alert alert-primary alert-dismissible fade show" role="alert">
                 <div class="col-md-10">
-                    ¿Ya viste lo <a class="a-home-mejoras font-weight-bold" href="{{ route('ayuda.version') }}">nuevo</a>?
+                    <h4>¿Ya viste lo <a class="a-home-mejoras font-weight-bold" href="{{ route('ayuda.version') }}">nuevo</a>?</h4>
                     <hr>
                     <p>¡Revisitas y Estudios! Finalmente se pueden cargar datos de revisitas, sesiones de estudio y todo lo referente a las personas interesadas.</p>
                     <p>Buscador de Personas interesadas para encontrar rápidamente a alguien.</p>
@@ -17,7 +17,7 @@
                     <p>Vista de Inicio Renovada</p>
                 </div>
                 <div class="col-md-2 text-right" style="padding: 0px;">
-                    <a class="btn-btn-info btn-sm" href="{{ route('no-mostrar') }}">No mostrar de nuevo</a>
+                    <a class="btn btn-info btn-sm" href="{{ route('no-mostrar') }}">No mostrar de nuevo</a>
                 </div>                
             </div>
             @endif
