@@ -52,5 +52,10 @@ class PersonaController extends Controller
     	$personas = Persona::where('user_id', '=', \Auth::user()->id)->where('borrado', '=', 0)->get();
     	Flash::error('Se borró "' . $persona->nombre . '" correctamente.')->important();
     	return view('persona.index', compact('personas'));
-    }
+	}
+	
+	public function mapa($id) {
+		$persona = Persona::find($id);
+		return view('persona.mapa', compact('persona'));
+	}
 }

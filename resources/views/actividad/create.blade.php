@@ -27,7 +27,7 @@
 				<div class="form-group input-group">		
 					{!! Form::number('publicaciones', null, ['class' => 'form-control size-letra', 'placeholder' => 'Impresas y digitales']) !!}
 				<label class="input-group-text"></label>
-					{!! Form::number('videos', null, ['class' => 'form-control size-letra', 'placeholder' => 'Cantidad de reproducciones']) !!}
+					{!! Form::number('videos', null, ['class' => 'form-control size-letra', 'placeholder' => 'Reproducciones']) !!}
 				</div>
 				<div class="form-group">
 					{!! Form::label('revisitas', 'Revisitas') !!}

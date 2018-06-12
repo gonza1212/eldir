@@ -8,7 +8,7 @@
         <div class="col-md-12">
 			<div class="panel panel-default" style="border-radius: 0px;">
 				<div class="panel-heading">
-					<h3 class="text-center">{!! $meses[$mesActual->month] . ' de ' . $mesActual->year !!}</h3>
+					<h3 class="text-center">{!! $meses[$mesActual->month] . ' de ' . $mesActual->year !!} <a class="btn btn-wsp font-weight-bold" href="whatsapp://send?text={{ 'Informe de *' . Auth::user()->name . '* de *' . $meses[$mesActual->month] . '*: ' . $actividadActual[0] . ' horas con ' . $actividadActual[1] . ' minutos, ' . $actividadActual[2] . ' publicaciones ' . $actividadActual[3] . ' videos, ' . $actividadActual[4] . ' revisitas y ' . $actividadActual[5] . ' estudios' }}" data-action="share/whatsapp/share">Compartir <i class="fab fa-whatsapp fa-lg"></i></a></h3>
 				</div>
 				<div class="panel-body text-center">
 					<h3>{{ $actividadActual[0] }}<small> horas con </small>{{ $actividadActual[1] }}<small> minutos, </small>{{ $actividadActual[2] }}<small> publicaciones, </small>{{ $actividadActual[3] }}<small> videos, </small>{{ $actividadActual[4] }}<small> revisitas y </small>{{ $actividadActual[5] }}<small> estudios.</small></h3>
@@ -72,7 +72,7 @@
 			</div>
 			<div class="panel panel-default">
 				<div class="panel-heading" style="border-radius: 0px;">
-					<h3 class="text-center">{!! $meses[($mesActual->subMonth())->month] . ' de ' . $mesActual->year !!}</h3>
+					<h3 class="text-center">{!! $meses[($mesActual->subMonth())->month] . ' de ' . $mesActual->year !!} <a class="btn btn-wsp font-weight-bold" href="whatsapp://send?text={{ 'Informe de *' . Auth::user()->name . '* de *' . $meses[$mesActual->month] . '*: ' . $actividadPasada[0] . ' horas con ' . $actividadPasada[1] . ' minutos, ' . $actividadPasada[2] . ' publicaciones ' . $actividadPasada[3] . ' videos, ' . $actividadPasada[4] . ' revisitas y ' . $actividadPasada[5] . ' estudios' }}" data-action="share/whatsapp/share">Compartir <i class="fab fa-whatsapp fa-lg"></i></a></h3>
 				</div>
 				<div class="panel-body text-center">
 					<h3>{{ $actividadPasada[0] }}<small> horas con </small>{{ $actividadPasada[1] }}<small> minutos, </small>{{ $actividadPasada[2] }}<small> publicaciones, </small>{{ $actividadPasada[3] }}<small> videos, </small>{{ $actividadPasada[4] }}<small> revisitas y </small>{{ $actividadPasada[5] }}<small> estudios.</small></h3>

@@ -15,7 +15,7 @@
 		<div class="col-md-6">
 			<h5><strong>Dirección</strong></h5>
 			<hr>
-			<p>{{ $persona->direccion->calle_1 }} N° {{ $persona->direccion->numero }} N° dpto: {{ $persona->direccion->depto }} (entre {{ $persona->direccion->entre }})</p>
+			<p id="direccion">{{ $persona->direccion->calle_1 }} N° {{ $persona->direccion->numero }} N° dpto: {{ $persona->direccion->depto }} (entre {{ $persona->direccion->entre }})</p>
 			<p>{{ $persona->direccion->calle_2 }}</p>
 			<p>Barrio: {{ $persona->direccion->barrio }}</p>
 			<p>N° Territorio: {{ $persona->direccion->territorio }}</p>

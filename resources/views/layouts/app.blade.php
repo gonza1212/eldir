@@ -12,11 +12,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', config('app.name', 'Laravel'))</title>
-
+    <!DOCTYPE html>
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fa-svg-with-js.css') }}" rel="stylesheet">
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
+    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHMX3-o0_J91G1mOC3jrqWbNi6fiEH_6s&libraries=places&callback=initialize"
+  type="text/javascript"></script>
     @if(Auth::user() && Auth::user()->letra_grande)
     <style type="text/css">
     .size-letra {
@@ -36,9 +39,9 @@
                 <i class="fab fa-laravel"></i> {{ config('app.name', 'Laravel') }}
             </a>
             @else
-            <a class="navbar-brand" href="{{ route('home') }}"><i class="fas fa-home"></i></a>
+            <a id="boton-inicio" class="navbar-brand" href="{{ route('home') }}"><i class="fas fa-home"></i> Inicio</a>
             @endguest
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="ponerTexto()">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -52,8 +55,13 @@
                             <a class="nav-link" href="{!! route('users.index') !!}"><i class="fas fa-user-cog"></i> Usuarios</a>
                         </li>
                     @endif
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('actividad.index') }}"><i class="fas fa-book"></i> Actividad</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownActividad" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-book"></i> Actividad</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownActividad">
+                            <a class="dropdown-item" href="{{ route('actividad.index') }}"><i class="fas fa-pencil-alt"></i> Registros</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('territorio.index') }}"><i class="fas fa-map-signs"></i> Territorio Personal</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('persona.index') }}"><i class="fas fa-users"></i> Personas Interesadas</a>
@@ -73,8 +81,8 @@
                         </li>
                     @else
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cogs"></i> Opciones</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownOpciones" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-cogs"></i> Opciones</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownOpciones">
                             <a class="dropdown-item" href="{{ route('meta') }}"><i class="fas fa-flag-checkered"></i> Meta</a>
                             @if(Auth::user()->letra_grande)
                             <a class="dropdown-item" href="{{ route('ajustar-letra') }}"><i class="fas fa-font"></i> Letra Normal</a>
@@ -111,7 +119,7 @@
     <div class="row">
         <div class="col-md-12">
         <footer>
-            <p class="text-center"><a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type"><a href="{{ route('ayuda.version') }}" class="aVersion">Eldir v{{ Config::get('constants.NUM_VERSION') }} Anotador de Actividad</a></span> está hecho con <i class="fas fa-heart"></i> por <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Millapinda Gonzalo</span> y se distribuye bajo una <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p><h5 class="text-center"> Es y siempre será GRATIS. Give a Star the project on <a target="_blank" href="https://github.com/gonza1212/eldir"> GitHub <i class="fab fa-github"></i></a></h5>
+            <p class="text-center"><a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type"><a href="{{ route('ayuda.version') }}" class="aVersion">Eldir v{{ Config::get('constants.NUM_VERSION') }} Registro de Actividad</a></span> está hecho con <i class="fas fa-heart"></i> por <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Millapinda Gonzalo</span> y se distribuye bajo una <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p><h5 class="text-center"> Es y siempre será GRATIS. Give a Star the project on <a target="_blank" href="https://github.com/gonza1212/eldir"> GitHub <i class="fab fa-github"></i></a></h5>
         </footer>
         </div>
     </div>
@@ -131,10 +139,19 @@
        if (eliminar)
        window.location.href= tabla+"/"+id+"/destroy";//página web a la que te redirecciona si confirmas la eliminación
         else
-        alert('No se ha podido eliminar el registro..')
+        alert('No se ha podido eliminar el registro.')
         }
     </script>
-    <script type="text/javascript">
+    <script>
+        function eliminar_agresivo(id, tabla) {
+       eliminar=confirm("¿Deseas eliminar este registro y todos sus datos relacionados?");
+       if (eliminar)
+       window.location.href= tabla+"/"+id+"/destroyAgressive";//página web a la que te redirecciona si confirmas la eliminación
+        else
+        alert('No se ha podido eliminar el registro.')
+        }
+    </script>
+    <script>
         $(document).ready(function()
             {
             $("#selectorCondicion").click(function () {

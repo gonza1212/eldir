@@ -71,5 +71,10 @@ class ActividadController extends Controller
         return redirect()->route('actividad.index');
     }
 
+    public function months() {
+      $actividades = Actividad::buscarPorUsuario(\Auth::user()->id);
+    	return view('actividad.months', compact('actividades', $actividades));
+    }
+
     
 }

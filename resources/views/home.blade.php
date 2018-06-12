@@ -1,23 +1,29 @@
 @extends('layouts.app')
 
-@section('title', 'Inicio')
+@section('title', 'Inicio | Eldir: Registro de Actividad')
 
 @section('content')
 <div class="container size-letra">
     <div class="row">
         <div class="col-md-12">
+        <!DOCTYPE html>
             @if(\Auth::user()->mejorasNoVistas())
-            <div class="row alert alert-primary alert-dismissible fade show" role="alert">
+            <div class="row alert alert-success alert-dismissible fade show" role="alert">
                 <div class="col-md-10">
                     <h4>¿Ya viste lo <a class="a-home-mejoras font-weight-bold" href="{{ route('ayuda.version') }}">nuevo</a>?</h4>
                     <hr>
-                    <p>¡Revisitas y Estudios! Finalmente se pueden cargar datos de revisitas, sesiones de estudio y todo lo referente a las personas interesadas.</p>
-                    <p>Buscador de Personas interesadas para encontrar rápidamente a alguien.</p>
-                    <p>Revisitas listadas por última visita: para saber cuál es el que debería visitar pronto</p>
-                    <p>Vista de Inicio Renovada</p>
+                    <p><strong>Mapas</strong> para encontrar mas rápido las revisitas.</p>
+                    <p>¡Compartir Informe por <strong>WhatsApp</strong>! Para pasarlo rápidamente.</p>
+                    <p><strong>Territorio Personal</strong>: igual que un Registro de Casa en Casa, permite anotar cada casa o negocio que se predica en un territorio personal y se pueden cargar tantos territorios como se necesiten.</p>
+                    <hr>
+                    <h5><strong>¡Lo que se viene!</strong></h5>
+                    <p>Más utilidades para Revisitas</p>
+                    <p>Meta Anual para Regulares (y más opciones!)</p>
+                    <p>Totales de Actividad: semanales, mensuales y anuales</p>
+                    <p>y mucho más!</p>
                 </div>
                 <div class="col-md-2 text-right" style="padding: 0px;">
-                    <a class="btn btn-info btn-sm" href="{{ route('no-mostrar') }}">No mostrar de nuevo</a>
+                    <a class="btn btn-success btn-sm" href="{{ route('no-mostrar') }}">No mostrar de nuevo</a>
                 </div>                
             </div>
             @endif
@@ -38,9 +44,9 @@
                         <br>
                         <h3>{{ $actividadActual[0] }}<small> horas con </small>{{ $actividadActual[1] }}<small> minutos, </small>{{ $actividadActual[2] }}<small> publicaciones, </small>{{ $actividadActual[3] }}<small> videos, </small>{{ $actividadActual[4] }}<small> revisitas y </small>{{ $actividadActual[5] }}<small> estudios.</small></h3>                        
                         @if($veces == 1)
-                        <h3><small>Has salido:</small> {{ $veces }} vez</h3>
+                        <h3><small>Salí </small> {{ $veces }} vez</h3>
                         @else
-                        <h3><small>Has salido:</small> {{ $veces }} veces</h3>
+                        <h3><small>Salí </small> {{ $veces }} veces</h3>
                         @endif
                     </div>
                     <div id="revisitas" class="panel-collapse collapse">
@@ -86,7 +92,7 @@
                             }
                             else if($actividadActual[0] > $horas_deber || $actividadActual[0] == $horas_deber && $actividadActual[1] >= $min_deber) {
                                 @endphp
-                                <h3 class="text-success font-weight-bold"><i class="far fa-thumbs-up"></i> ¡Voy adelantado! No tengo que aflojar <a target="_blank" href="https://www.jw.org/es/publicaciones/biblia/bi12/libros/Eclesiast%C3%A9s/11/#v21011006">(Ecl. 11:6)</a><i class="fas fa-child"></i><br><br>Para hoy debería llevar {{ $horas_deber .':'.$min_deber }}</h3>
+                                <h3 class="text-success font-weight-bold"><i class="far fa-thumbs-up"></i> ¡Voy bien! No tengo que aflojar <a target="_blank" href="https://www.jw.org/es/publicaciones/biblia/bi12/libros/Eclesiast%C3%A9s/11/#v21011006">(Ecl. 11:6)</a><i class="fas fa-child"></i><br><br>Para hoy debería llevar {{ $horas_deber .':'.$min_deber }}</h3>
                                 @php
                             } else {
                                 @endphp

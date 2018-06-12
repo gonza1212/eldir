@@ -39,6 +39,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Visita');
     }
 
+    public function territorios() {
+        return $this->hasMany('App\Territorio');
+    }
+
     public function admin() {
         return $this->type == 'admin';
     }

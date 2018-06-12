@@ -23,7 +23,7 @@ class RevisitaController extends Controller
     }
 
     public function store(Request $request) {
-    	$this->validate($request, ['fecha' => 'required|unique:visitas,fecha,NULL,NULL,tema,'.$request['tema'].'|date|before:tomorrow', 'tema' => 'required|unique:visitas,tema,NULL,NULL,fecha,'.$request['fecha'].'|min:3|max:191', 'textos' => 'nullable|min:3|max:191', 'publicacion' => 'nullable|min:3|max:191', 'pendiente' => 'nullable|min:3|max:191', 'obs_2' => 'nullable|min:3|max:65535']);
+    	$this->validate($request, ['fecha' => 'required|date|before:tomorrow', 'tema' => 'required|min:3|max:191', 'textos' => 'nullable|min:3|max:191', 'publicacion' => 'nullable|min:3|max:191', 'pendiente' => 'nullable|min:3|max:191', 'obs_2' => 'nullable|min:3|max:65535']);
 		($request->tema == null || $request->tema == "") ? $request->tema = "Presentación del Mes" : $request->tema = $request->tema;
 		$ahora = Carbon::now();
 		DB::beginTransaction();

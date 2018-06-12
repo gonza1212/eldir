@@ -44,6 +44,7 @@
 					</div>
 					<div class="panel-body">
 						<p>Dirección: {{ $p->direccion->calle_1 . ' N° ' . $p->direccion->numero }}</p>
+						<a class="btn btn-danger btn-sm" href="{{ route('persona.mapa', $p->id) }}" style="margin: -9px 0px 9px 0px !important;"><i class="fas fa-map-marker-alt"></i> Ver Mapa</a>
 						@if(count($p->visitas) > 0)
 							<p>Última visita: <strong>{!! Carbon\Carbon::parse($p->visitas[count($p->visitas) - 1]->fecha)->toFormattedDateString() !!}</strong></p>
 							<p>Tema Hablado: {{ $p->visitas[count($p->visitas) - 1]->tema }}</p>

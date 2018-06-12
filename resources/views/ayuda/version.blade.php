@@ -12,13 +12,11 @@
 				</div>
 				<div class="panel-body">
 					<p>
-						1 - <strong>Nueva función: Revisitas y Estudios.</strong> Se puede cargar los datos de una visita inicial, cargar revisitas nuevas o existentes, sesiones de estudio con publicacion, capítulo y párrafo, además de poder editar o eliminar cualquiera de estos datos cuando sea necesario.<br>
-						2 - <strong>Buscador de Revisitas:</strong> herramienta para buscar revisitas por múltiples campos: nombre, calle, tema hablado, textos leídos u observaciones en la persona, en la dirección o en cualquiera de las visitas realizadas.<br>
-						3 - Listado de Personas por urgencia de revisita: en un sólo toque uno puede saber cuáles son las revisitas a las hace mucho no se ve y hay que visitar.<br>
-						4 - Actualización de Bootstrap y cambios de estilos.<br>
-						5 - Cambios visuales menores.<br>
-						6 - Arreglos de bugs encontrados en v1.0
-					</p>
+						1 - <strong>Compartir Informe por WhatsApp.</strong><br>
+						2 - <strong>Nueva Función: Territorio Personal</strong>. Permite registrar los datos de un territorio personal de la misma forma que se haría con un "Registro de Casa en Casa".<br>
+						3 - Se puede ver la dirección de una revisita en un Mapa.<br>
+						4 - Arreglado bug que no permitía guardar algunos datos separados por comas.<br>
+						5 - Arreglos y cambios menores.
 				</div>
 			</div>
 			<div class="panel panel-default">
@@ -35,6 +33,19 @@
 					    </tr>
 					  </thead>
 					  <tbody>
+						<tr>
+					      <td>1.0.10 Major Version</td>
+								<td>
+										<p>
+											1 - <strong>Nueva función: Revisitas y Estudios.</strong> Se puede cargar los datos de una visita inicial, cargar revisitas nuevas o existentes, sesiones de estudio con publicacion, capítulo y párrafo, además de poder editar o eliminar cualquiera de estos datos cuando sea necesario.<br>
+											2 - <strong>Buscador de Revisitas:</strong> herramienta para buscar revisitas por múltiples campos: nombre, calle, tema hablado, textos leídos u observaciones en la persona, en la dirección o en cualquiera de las visitas realizadas.<br>
+											3 - Listado de Personas por urgencia de revisita: en un sólo toque uno puede saber cuáles son las revisitas a las hace mucho no se ve y hay que visitar.<br>
+											4 - Actualización de Bootstrap y cambios de estilos.<br>
+											5 - Cambios visuales menores.<br>
+											6 - Arreglos de bugs encontrados en v1.0
+							</p>
+								</td>
+					    </tr>
 					  	<tr>
 					      	<td>0.6</td>
 					      	<td>
