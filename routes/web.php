@@ -115,3 +115,7 @@ Route::prefix('opciones')->group(function() {
   Route::get('ajustar-meta', 'ConfigController@ajustarMeta')->middleware('auth')->name('ajustar-meta');
   Route::post('configurar-meta', 'ConfigController@configurarMeta')->middleware('auth')->name('configurar-meta');
 });
+
+
+/* Rutas llamadas por AJAX */
+Route::post('/getUser', 'HomeController@getUser')->middleware('auth');

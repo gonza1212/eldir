@@ -108,6 +108,13 @@ footer {
 	margin-bottom: 1em;
 }
 
+.bloque-acceso-rapido {
+	background-color: rgba(255,255,255,0.75);
+	padding-top: 0.5em;
+	margin: 0.5em;
+	padding-bottom: 0.5em;
+}
+
 .aVersion {
 	font:bold 14px "arial";
 }
@@ -124,6 +131,7 @@ footer {
 
 .text-home {
 	font:bold 1.5em "arial";
+
 }
 
 .container-blanco-solido {

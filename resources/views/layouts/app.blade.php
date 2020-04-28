@@ -119,7 +119,9 @@
     <div class="row">
         <div class="col-md-12">
         <footer>
-            <p class="text-center"><a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type"><a href="{{ route('ayuda.version') }}" class="aVersion">Eldir v{{ Config::get('constants.NUM_VERSION') }} Registro de Actividad</a></span> está hecho con <i class="fas fa-heart"></i> por <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Millapinda Gonzalo</span> y se distribuye bajo una <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p><h5 class="text-center"> Es y siempre será GRATIS. Give a Star the project on <a target="_blank" href="https://github.com/gonza1212/eldir"> GitHub <i class="fab fa-github"></i></a></h5>
+        <p class="text-center font-weight-bold">Hecho con <i class="fas fa-heart"></i> por Gonza Millapinda</p>
+            <!-- 
+            <p class="text-center"><a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type"><a href="{{ route('ayuda.version') }}" class="aVersion">Eldir v{{ Config::get('constants.NUM_VERSION') }} Registro de Actividad</a></span> está hecho con <i class="fas fa-heart"></i> por <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Millapinda Gonzalo</span> y se distribuye bajo una <a target="_blank" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>.</p><h5 class="text-center"> Es y siempre será GRATIS. Give a Star the project on <a target="_blank" href="https://github.com/gonza1212/eldir"> GitHub <i class="fab fa-github"></i></a></h5> -->
         </footer>
         </div>
     </div>
@@ -133,6 +135,7 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/fontawesome-all.min.js') }}"></script>
+    <script src="{{ asset('js/core.js') }}"></script>
     <script>
         function eliminar(id, tabla) {
        eliminar=confirm("¿Deseas eliminar este registro?");

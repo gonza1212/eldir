@@ -27,6 +27,10 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index() {
+        return view('home');
+    }
+
+    public function getUser() {
         $actividades = Actividad::buscarPorUsuario(\Auth::user()->id)->orderBy('id')->get();
         // Define las fechas de los que se calculará 
         $mesActual = Carbon::now()->day(1)->hour(0)->minute(0)->second(0);
@@ -44,8 +48,7 @@ class HomeController extends Controller
             }
         }
         $personas = self::ordernarPorUrgencia(Persona::where('user_id', '=', \Auth::user()->id)->where('borrado', '=', 0)->get());
-        //dd($personas);
-        return view('home', compact('actividadActual', 'veces', 'personas'));
+        return response()->json(array('actividadActual' => $actividadActual, 'veces' => $veces, 'personas' => $personas), 200);
     }
 
     private function ordernarPorUrgencia($personas) {
